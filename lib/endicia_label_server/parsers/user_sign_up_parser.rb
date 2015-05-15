@@ -5,8 +5,13 @@ module EndiciaLabelServer
 
       def value(value)
         super
-        self.confirmation_number = value.as_s if switch_active? :ConfirmationNumber
-        self.account_id = value.as_s if switch_active? :AccountID
+
+        string_value = value.as_s
+        if switch_active? :ConfirmationNumber
+          self.confirmation_number = string_value
+        elsif switch_active? :AccountID
+          self.account_id = string_value
+        end
       end
 
       def success?
