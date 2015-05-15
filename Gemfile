@@ -6,4 +6,5 @@ group :development, :test do
   gem 'rake'
   gem 'rspec'
   gem 'rspec-xsd'
+  gem 'faker'
 end

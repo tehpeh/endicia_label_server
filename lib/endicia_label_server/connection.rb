@@ -24,6 +24,7 @@ module EndiciaLabelServer
     GET_POSTAGE_LABEL_ENDPOINT = 'GetPostageLabelXML'
     REQUEST_RATE_ENDPOINT = 'CalculatePostageRateXML'
     REQUEST_RATES_ENDPOINT = 'CalculatePostageRatesXML'
+    GET_USER_SIGNUP_ENDPOINT = 'GetUserSignUpXML'
 
     DEFAULT_PARAMS = {
       test_mode: false
@@ -51,6 +52,11 @@ module EndiciaLabelServer
     def rates(builder = nil)
       builder_proxy(builder, REQUEST_RATES_ENDPOINT, PostageRatesBuilder,
                     PostageRatesParser, &Proc.new)
+    end
+
+    def sign_up(builder = nil)
+      builder_proxy(builder, GET_USER_SIGNUP_ENDPOINT, UserSignUpBuilder,
+                    UserSignUpParser, &Proc.new)
     end
 
     private

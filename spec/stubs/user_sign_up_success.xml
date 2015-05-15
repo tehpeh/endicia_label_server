@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserSignUpResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="www.envmgr.com/LabelService">
+  <RequesterID>ABCD</RequesterID>
+  <RequestID>ABC</RequestID>
+  <ConfirmationNumber>1000000</ConfirmationNumber>
+  <AccountID>1000000</AccountID>
+</UserSignUpResponse>
