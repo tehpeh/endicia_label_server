@@ -43,13 +43,13 @@ module EndiciaLabelServer
       self.url = (params[:test_mode]) ? TEST_URL : LIVE_URL
     end
 
-    def rate(rate_builder = nil)
-      builder_proxy(rate_builder, REQUEST_RATE_ENDPOINT, PostageRateBuilder,
+    def rate(builder = nil)
+      builder_proxy(builder, REQUEST_RATE_ENDPOINT, PostageRateBuilder,
                     PostageRateParser, &Proc.new)
     end
 
-    def rates(rate_builder = nil)
-      builder_proxy(rate_builder, REQUEST_RATES_ENDPOINT, PostageRatesBuilder,
+    def rates(builder = nil)
+      builder_proxy(builder, REQUEST_RATES_ENDPOINT, PostageRatesBuilder,
                     PostageRatesParser, &Proc.new)
     end
 
