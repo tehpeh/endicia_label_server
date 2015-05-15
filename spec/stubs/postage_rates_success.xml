@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PostageRatesResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="www.envmgr.com/LabelService">
+  <Status>0</Status>
+  <PostagePrice TotalAmount="1.93">
+    <MailClass>First</MailClass>
+    <Postage TotalAmount="1.93">
+      <MailService>First-Class Mail</MailService>
+      <Zone>8</Zone>
+      <IntraBMC>false</IntraBMC>
+      <Pricing>CommercialBase</Pricing>
+    </Postage>
+    <Fees TotalAmount="0">
+      <CertificateOfMailing>0</CertificateOfMailing>
+      <CertifiedMail>0</CertifiedMail>
+      <CollectOnDelivery>0</CollectOnDelivery>
+      <DeliveryConfirmation>0</DeliveryConfirmation>
+      <ElectronicReturnReceipt>0</ElectronicReturnReceipt>
+      <InsuredMail>0</InsuredMail>
+      <RegisteredMail>0</RegisteredMail>
+      <RestrictedDelivery>0</RestrictedDelivery>
+      <ReturnReceipt>0</ReturnReceipt>
+      <ReturnReceiptForMerchandise>0</ReturnReceiptForMerchandise>
+      <SignatureConfirmation>0</SignatureConfirmation>
+      <SpecialHandling>0</SpecialHandling>
+      <CriticalMail>0</CriticalMail>
+      <MerchandiseReturn>0</MerchandiseReturn>
+      <OpenAndDistribute>0</OpenAndDistribute>
+      <AdultSignature>0</AdultSignature>
+      <AdultSignatureRestrictedDelivery>0</AdultSignatureRestrictedDelivery>
+      <LiveAnimalSurcharge>0</LiveAnimalSurcharge>
+      <AMDelivery>0</AMDelivery>
+    </Fees>
+  </PostagePrice>
+  <PostagePrice TotalAmount="6.51">
+    <MailClass>Priority</MailClass>
+    <Postage TotalAmount="6.51">
+      <MailService>Priority Mail</MailService>
+      <Zone>8</Zone>
+      <IntraBMC>false</IntraBMC>
+      <Pricing>CommercialBase</Pricing>
+    </Postage>
+    <Fees TotalAmount="0">
+      <CertificateOfMailing>0</CertificateOfMailing>
+      <CertifiedMail>0</CertifiedMail>
+      <CollectOnDelivery>0</CollectOnDelivery>
+      <DeliveryConfirmation>0</DeliveryConfirmation>
+      <ElectronicReturnReceipt>0</ElectronicReturnReceipt>
+      <InsuredMail>0</InsuredMail>
+      <RegisteredMail>0</RegisteredMail>
+      <RestrictedDelivery>0</RestrictedDelivery>
+      <ReturnReceipt>0</ReturnReceipt>
+      <ReturnReceiptForMerchandise>0</ReturnReceiptForMerchandise>
+      <SignatureConfirmation>0</SignatureConfirmation>
+      <SpecialHandling>0</SpecialHandling>
+      <CriticalMail>0</CriticalMail>
+      <MerchandiseReturn>0</MerchandiseReturn>
+      <OpenAndDistribute>0</OpenAndDistribute>
+      <AdultSignature>0</AdultSignature>
+      <AdultSignatureRestrictedDelivery>0</AdultSignatureRestrictedDelivery>
+      <LiveAnimalSurcharge>0</LiveAnimalSurcharge>
+      <AMDelivery>0</AMDelivery>
+    </Fees>
+  </PostagePrice>
+  <PostagePrice TotalAmount="27.68">
+    <MailClass>PriorityExpress</MailClass>
+    <Postage TotalAmount="27.68">
+      <MailService>Priority Mail Express</MailService>
+      <Zone>8</Zone>
+      <IntraBMC>false</IntraBMC>
+      <Pricing>CommercialBase</Pricing>
+    </Postage>
+    <Fees TotalAmount="0">
+      <CertificateOfMailing>0</CertificateOfMailing>
+      <CertifiedMail>0</CertifiedMail>
+      <CollectOnDelivery>0</CollectOnDelivery>
+      <DeliveryConfirmation>0</DeliveryConfirmation>
+      <ElectronicReturnReceipt>0</ElectronicReturnReceipt>
+      <InsuredMail>0</InsuredMail>
+      <RegisteredMail>0</RegisteredMail>
+      <RestrictedDelivery>0</RestrictedDelivery>
+      <ReturnReceipt>0</ReturnReceipt>
+      <ReturnReceiptForMerchandise>0</ReturnReceiptForMerchandise>
+      <SignatureConfirmation>0</SignatureConfirmation>
+      <SpecialHandling>0</SpecialHandling>
+      <CriticalMail>0</CriticalMail>
+      <MerchandiseReturn>0</MerchandiseReturn>
+      <OpenAndDistribute>0</OpenAndDistribute>
+      <AdultSignature>0</AdultSignature>
+      <AdultSignatureRestrictedDelivery>0</AdultSignatureRestrictedDelivery>
+      <LiveAnimalSurcharge>0</LiveAnimalSurcharge>
+      <AMDelivery>0</AMDelivery>
+    </Fees>
+  </PostagePrice>
+  <PostagePrice TotalAmount="2.56">
+    <MailClass>LibraryMail</MailClass>
+    <Postage TotalAmount="2.56">
+      <MailService>Library Mail</MailService>
+      <Zone>8</Zone>
+      <IntraBMC>false</IntraBMC>
+      <Pricing>Retail</Pricing>
+    </Postage>
+    <Fees TotalAmount="0">
+      <CertificateOfMailing>0</CertificateOfMailing>
+      <CertifiedMail>0</CertifiedMail>
+      <CollectOnDelivery>0</CollectOnDelivery>
+      <DeliveryConfirmation>0</DeliveryConfirmation>
+      <ElectronicReturnReceipt>0</ElectronicReturnReceipt>
+      <InsuredMail>0</InsuredMail>
+      <RegisteredMail>0</RegisteredMail>
+      <RestrictedDelivery>0</RestrictedDelivery>
+      <ReturnReceipt>0</ReturnReceipt>
+      <ReturnReceiptForMerchandise>0</ReturnReceiptForMerchandise>
+      <SignatureConfirmation>0</SignatureConfirmation>
+      <SpecialHandling>0</SpecialHandling>
+      <CriticalMail>0</CriticalMail>
+      <MerchandiseReturn>0</MerchandiseReturn>
+      <OpenAndDistribute>0</OpenAndDistribute>
+      <AdultSignature>0</AdultSignature>
+      <AdultSignatureRestrictedDelivery>0</AdultSignatureRestrictedDelivery>
+      <LiveAnimalSurcharge>0</LiveAnimalSurcharge>
+      <AMDelivery>0</AMDelivery>
+    </Fees>
+  </PostagePrice>
+  <PostagePrice TotalAmount="2.69">
+    <MailClass>MediaMail</MailClass>
+    <Postage TotalAmount="2.69">
+      <MailService>Media Mail</MailService>
+      <Zone>8</Zone>
+      <IntraBMC>false</IntraBMC>
+      <Pricing>Retail</Pricing>
+    </Postage>
+    <Fees TotalAmount="0">
+      <CertificateOfMailing>0</CertificateOfMailing>
+      <CertifiedMail>0</CertifiedMail>
+      <CollectOnDelivery>0</CollectOnDelivery>
+      <DeliveryConfirmation>0</DeliveryConfirmation>
+      <ElectronicReturnReceipt>0</ElectronicReturnReceipt>
+      <InsuredMail>0</InsuredMail>
+      <RegisteredMail>0</RegisteredMail>
+      <RestrictedDelivery>0</RestrictedDelivery>
+      <ReturnReceipt>0</ReturnReceipt>
+      <ReturnReceiptForMerchandise>0</ReturnReceiptForMerchandise>
+      <SignatureConfirmation>0</SignatureConfirmation>
+      <SpecialHandling>0</SpecialHandling>
+      <CriticalMail>0</CriticalMail>
+      <MerchandiseReturn>0</MerchandiseReturn>
+      <OpenAndDistribute>0</OpenAndDistribute>
+      <AdultSignature>0</AdultSignature>
+      <AdultSignatureRestrictedDelivery>0</AdultSignatureRestrictedDelivery>
+      <LiveAnimalSurcharge>0</LiveAnimalSurcharge>
+      <AMDelivery>0</AMDelivery>
+    </Fees>
+  </PostagePrice>
+  <PostagePrice TotalAmount="6.68">
+    <MailClass>ParcelSelect</MailClass>
+    <Postage TotalAmount="6.68">
+      <MailService>Parcel Select Barcoded Nonpresorted</MailService>
+      <Zone>8</Zone>
+      <IntraBMC>false</IntraBMC>
+      <Pricing>Commercial</Pricing>
+    </Postage>
+    <Fees TotalAmount="0">
+      <CertificateOfMailing>0</CertificateOfMailing>
+      <CertifiedMail>0</CertifiedMail>
+      <CollectOnDelivery>0</CollectOnDelivery>
+      <DeliveryConfirmation>0</DeliveryConfirmation>
+      <ElectronicReturnReceipt>0</ElectronicReturnReceipt>
+      <InsuredMail>0</InsuredMail>
+      <RegisteredMail>0</RegisteredMail>
+      <RestrictedDelivery>0</RestrictedDelivery>
+      <ReturnReceipt>0</ReturnReceipt>
+      <ReturnReceiptForMerchandise>0</ReturnReceiptForMerchandise>
+      <SignatureConfirmation>0</SignatureConfirmation>
+      <SpecialHandling>0</SpecialHandling>
+      <CriticalMail>0</CriticalMail>
+      <MerchandiseReturn>0</MerchandiseReturn>
+      <OpenAndDistribute>0</OpenAndDistribute>
+      <AdultSignature>0</AdultSignature>
+      <AdultSignatureRestrictedDelivery>0</AdultSignatureRestrictedDelivery>
+      <LiveAnimalSurcharge>0</LiveAnimalSurcharge>
+      <AMDelivery>0</AMDelivery>
+    </Fees>
+  </PostagePrice>
+</PostageRatesResponse>

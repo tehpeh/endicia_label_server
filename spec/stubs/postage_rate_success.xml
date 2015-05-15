@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PostageRateResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="www.envmgr.com/LabelService">
+  <Status>0</Status>
+  <Zone>8</Zone>
+  <Postage>
+    <MailService>Priority Mail Express</MailService>
+    <Rate>27.68</Rate>
+  </Postage>
+  <PriorityMailExpressCommitments>
+    <Commitment>
+      <CommitmentName>1-Day</CommitmentName>
+      <CommitmentTime>12:00 PM</CommitmentTime>
+      <Location>
+        <CutOff>5:00 PM</CutOff>
+        <Facility>POST OFFICE</Facility>
+        <Street>820 N SAN VICENTE BLVD</Street>
+        <City>WEST HOLLYWOOD</City>
+        <State>CA</State>
+        <Zip>90069</Zip>
+      </Location>
+      <Location>
+        <CutOff>5:00 PM</CutOff>
+        <Facility>EXPRESS MAIL COLLECTION BOX</Facility>
+        <Street>9171 WILSHIRE BLVD</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>4:30 PM</CutOff>
+        <Facility>EXPRESS MAIL COLLECTION BOX</Facility>
+        <Street>9665 WILSHIRE BLVD</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>4:00 PM</CutOff>
+        <Facility>EXPRESS MAIL COLLECTION BOX</Facility>
+        <Street>325 N MAPLE DR</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>3:30 PM</CutOff>
+        <Facility>POST OFFICE</Facility>
+        <Street>325 N MAPLE DR</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>2:30 PM</CutOff>
+        <Facility>POST OFFICE</Facility>
+        <Street>323 N CRESCENT DR</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>2:15 PM</CutOff>
+        <Facility>EXPRESS MAIL COLLECTION BOX</Facility>
+        <Street>297 S ROBERTSON</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>2:15 PM</CutOff>
+        <Facility>EXPRESS MAIL COLLECTION BOX</Facility>
+        <Street>301 N CANON DR</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+    </Commitment>
+    <Commitment>
+      <CommitmentName>1-Day</CommitmentName>
+      <CommitmentTime>3:00 PM</CommitmentTime>
+      <Location>
+        <CutOff>5:00 PM</CutOff>
+        <Facility>POST OFFICE</Facility>
+        <Street>820 N SAN VICENTE BLVD</Street>
+        <City>WEST HOLLYWOOD</City>
+        <State>CA</State>
+        <Zip>90069</Zip>
+      </Location>
+      <Location>
+        <CutOff>5:00 PM</CutOff>
+        <Facility>EXPRESS MAIL COLLECTION BOX</Facility>
+        <Street>9171 WILSHIRE BLVD</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>4:30 PM</CutOff>
+        <Facility>EXPRESS MAIL COLLECTION BOX</Facility>
+        <Street>9665 WILSHIRE BLVD</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>4:00 PM</CutOff>
+        <Facility>EXPRESS MAIL COLLECTION BOX</Facility>
+        <Street>325 N MAPLE DR</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>3:30 PM</CutOff>
+        <Facility>POST OFFICE</Facility>
+        <Street>325 N MAPLE DR</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>2:30 PM</CutOff>
+        <Facility>POST OFFICE</Facility>
+        <Street>323 N CRESCENT DR</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>2:15 PM</CutOff>
+        <Facility>EXPRESS MAIL COLLECTION BOX</Facility>
+        <Street>297 S ROBERTSON</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+      <Location>
+        <CutOff>2:15 PM</CutOff>
+        <Facility>EXPRESS MAIL COLLECTION BOX</Facility>
+        <Street>301 N CANON DR</Street>
+        <City>BEVERLY HILLS</City>
+        <State>CA</State>
+        <Zip>90210</Zip>
+      </Location>
+    </Commitment>
+  </PriorityMailExpressCommitments>
+</PostageRateResponse>
