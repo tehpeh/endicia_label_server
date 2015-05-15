@@ -44,21 +44,13 @@ module EndiciaLabelServer
     end
 
     def rate(rate_builder = nil)
-      rate_proxy(rate_builder,
-                 REQUEST_RATE_ENDPOINT,
-                 PostageRateBuilder,
-                 PostageRateParser) do |builder|
-        yield builder
-      end
+      builder_proxy(rate_builder, REQUEST_RATE_ENDPOINT, PostageRateBuilder,
+                    PostageRateParser, &Proc.new)
     end
 
     def rates(rate_builder = nil)
-      rate_proxy(rate_builder,
-                 REQUEST_RATES_ENDPOINT,
-                 PostageRatesBuilder,
-                 PostageRatesParser) do |builder|
-        yield builder
-      end
+      builder_proxy(rate_builder, REQUEST_RATES_ENDPOINT, PostageRatesBuilder,
+                    PostageRatesParser, &Proc.new)
     end
 
     private
@@ -72,13 +64,13 @@ module EndiciaLabelServer
       StringIO.new(response.body)
     end
 
-    def rate_proxy(rate_builder, path, builder, parser)
-      if rate_builder.nil? && block_given?
-        rate_builder = builder.new
-        yield rate_builder
+    def builder_proxy(builder, path, builder_type, parser)
+      if builder.nil? && block_given?
+        builder = builder_type.new
+        yield builder
       end
 
-      response = get_response_stream path, rate_builder.to_http_post
+      response = get_response_stream path, builder.to_http_post
       parser.new.tap do |p|
         Ox.sax_parse(p, response)
       end
