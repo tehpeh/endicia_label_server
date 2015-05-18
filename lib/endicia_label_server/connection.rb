@@ -54,6 +54,11 @@ module EndiciaLabelServer
                     PostageRatesParser, &Proc.new)
     end
 
+    def get_label(builder = nil)
+      builder_proxy(builder, GET_POSTAGE_LABEL_ENDPOINT, PostageLabelBuilder,
+                    PostageLabelParser, &Proc.new)
+    end
+
     def sign_up(builder = nil)
       builder_proxy(builder, GET_USER_SIGNUP_ENDPOINT, UserSignUpBuilder,
                     UserSignUpParser, &Proc.new)

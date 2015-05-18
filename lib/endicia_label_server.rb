@@ -13,6 +13,7 @@ module EndiciaLabelServer
     autoload :PostageRateBuilder,  "#{GEM_NAME}/builders/postage_rate_builder"
     autoload :PostageRatesBuilder, "#{GEM_NAME}/builders/postage_rates_builder"
     autoload :UserSignUpBuilder,   "#{GEM_NAME}/builders/user_sign_up_builder"
+    autoload :PostageLabelBuilder, "#{GEM_NAME}/builders/postage_label_builder"
   end
 
   module Parsers
@@ -20,5 +21,6 @@ module EndiciaLabelServer
     autoload :PostageRateParser,   "#{GEM_NAME}/parsers/postage_rate_parser"
     autoload :PostageRatesParser,  "#{GEM_NAME}/parsers/postage_rates_parser"
     autoload :UserSignUpParser,    "#{GEM_NAME}/parsers/user_sign_up_parser"
+    autoload :PostageLabelParser,  "#{GEM_NAME}/parsers/postage_label_parser"
   end
 end
