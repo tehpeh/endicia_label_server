@@ -20,10 +20,12 @@ module EndiciaLabelServer
       #
       # @param [String] root_name The Name of the XML Root
       # @return [void]
-      def initialize(root_name)
+      def initialize(root_name, opts)
         initialize_xml_roots root_name
 
         document << root
+
+        opts.each_pair { |k, v| add(k, v) }
       end
 
       def add(*args)
