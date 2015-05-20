@@ -20,7 +20,7 @@ module EndiciaLabelServer
       #
       # @param [String] root_name The Name of the XML Root
       # @return [void]
-      def initialize(root_name, opts)
+      def initialize(root_name, opts = {})
         initialize_xml_roots root_name
 
         document << root
@@ -35,15 +35,28 @@ module EndiciaLabelServer
 
         if last_arg.is_a? Hash
           add_hash root_key, last_arg
+        elsif last_arg.is_a? Array
+
         else
           root << element_with_value(root_key, last_arg)
         end
       end
 
       def add_hash(root_key, data)
-        root << Element.new(root_key).tap do |org|
+        xml_root_key = Util.camelize(root_key)
+        root << Element.new(xml_root_key).tap do |org|
           data.each_pair do |key, value|
             org << element_with_value(Util.camelize(key), value)
+          end
+        end
+      end
+
+      def add_array(root_key, data)
+        xml_root_key = Util.camelize(root_key)
+        root << Element.new(xml_root_key).tap do |org|
+          child_key = "#{Util.singularize(xml_root_key)}ID"
+          data.each do |value|
+            org << element_with_value(child_key, value)
           end
         end
       end
