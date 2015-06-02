@@ -9,6 +9,25 @@ describe EndiciaLabelServer::Connection, '.rates' do
     Excon.stubs.clear
   end
 
+  def apply_config_to_rate_builder(rate_builder)
+    rate_builder.add :certified_intermediary, {
+      account_id: ENV['ENDICIA_ACCOUNT_ID'],
+      pass_phrase: ENV['ENDICIA_PASS_PHRASE'],
+      token: ENV['ENDICIA_TOKEN']
+    }
+    rate_builder.add :requester_id, ENV['ENDICIA_REQUESTER_ID']
+    rate_builder.add :mail_class, "Domestic"
+    rate_builder.add :mailpiece_dimensions, {
+      length: '10',
+      width: '10',
+      height: '10'
+    }
+    rate_builder.add :weight_oz, "2"
+    rate_builder.add :from_postal_code, '90210'
+    rate_builder.add :to_postal_code, '02215'
+    rate_builder.add :to_country_code, 'US'
+  end
+
   let(:stub_path) { File.expand_path("../../../stubs", __FILE__) }
   let(:server) { EndiciaLabelServer::Connection.new(test_mode: true) }
 
@@ -24,22 +43,7 @@ describe EndiciaLabelServer::Connection, '.rates' do
 
     subject do
       server.rates do |rate_builder|
-        rate_builder.add :certified_intermediary, {
-          account_id: ENV['ENDICIA_ACCOUNT_ID'],
-          pass_phrase: ENV['ENDICIA_PASS_PHRASE'],
-          token: ENV['ENDICIA_TOKEN']
-        }
-        rate_builder.add :requester_id, ENV['ENDICIA_REQUESTER_ID']
-        rate_builder.add :mail_class, "Domestic"
-        rate_builder.add :mailpiece_dimensions, {
-          length: '10',
-          width: '10',
-          height: '10'
-        }
-        rate_builder.add :weight_oz, "2"
-        rate_builder.add :from_postal_code, '90210'
-        rate_builder.add :to_postal_code, '02215'
-        rate_builder.add :to_country_code, 'US'
+        apply_config_to_rate_builder(rate_builder)
       end
     end
 
@@ -70,22 +74,7 @@ describe EndiciaLabelServer::Connection, '.rates' do
 
     let(:rate_builder) {
       EndiciaLabelServer::Builders::PostageRatesBuilder.new.tap do |rate_builder|
-        rate_builder.add :certified_intermediary, {
-          account_id: ENV['ENDICIA_ACCOUNT_ID'],
-          pass_phrase: ENV['ENDICIA_PASS_PHRASE'],
-          token: ENV['ENDICIA_TOKEN']
-        }
-        rate_builder.add :requester_id, ENV['ENDICIA_REQUESTER_ID']
-        rate_builder.add :mail_class, "Domestic"
-        rate_builder.add :mailpiece_dimensions, {
-          length: '10',
-          width: '10',
-          height: '10'
-        }
-        rate_builder.add :weight_oz, "2"
-        rate_builder.add :from_postal_code, '90210'
-        rate_builder.add :to_postal_code, '02215'
-        rate_builder.add :to_country_code, 'US'
+        apply_config_to_rate_builder(rate_builder)
       end
     }
 
