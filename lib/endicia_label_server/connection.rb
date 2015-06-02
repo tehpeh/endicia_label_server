@@ -44,24 +44,24 @@ module EndiciaLabelServer
       self.url = (params[:test_mode]) ? TEST_URL : LIVE_URL
     end
 
-    def rate(builder = nil)
+    def rate(builder = nil, &block)
       builder_proxy(builder, REQUEST_RATE_ENDPOINT, PostageRateBuilder,
-                    PostageRateParser, &Proc.new)
+                    PostageRateParser, block)
     end
 
-    def rates(builder = nil)
+    def rates(builder = nil, &block)
       builder_proxy(builder, REQUEST_RATES_ENDPOINT, PostageRatesBuilder,
-                    PostageRatesParser, &Proc.new)
+                    PostageRatesParser, block)
     end
 
-    def get_label(builder = nil)
+    def get_label(builder = nil, &block)
       builder_proxy(builder, GET_POSTAGE_LABEL_ENDPOINT, PostageLabelBuilder,
-                    PostageLabelParser, &Proc.new)
+                    PostageLabelParser, block)
     end
 
-    def sign_up(builder = nil)
+    def sign_up(builder = nil, &block)
       builder_proxy(builder, GET_USER_SIGNUP_ENDPOINT, UserSignUpBuilder,
-                    UserSignUpParser, &Proc.new)
+                    UserSignUpParser, block)
     end
 
     private
@@ -75,10 +75,10 @@ module EndiciaLabelServer
       StringIO.new(response.body)
     end
 
-    def builder_proxy(builder, path, builder_type, parser)
-      if builder.nil? && block_given?
+    def builder_proxy(builder, path, builder_type, parser, block)
+      if builder.nil? && block
         builder = builder_type.new
-        yield builder
+        block.call builder
       end
 
       response = get_response_stream path, builder.to_http_post
