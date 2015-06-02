@@ -7,6 +7,11 @@ require 'rspec/xsd'
 
 Dir["#{path}/spec/support/*.rb"].each {|file| require file}
 
+ENV['ENDICIA_ACCOUNT_ID'] = '' unless ENV.key? 'ENDICIA_ACCOUNT_ID'
+ENV['ENDICIA_PASS_PHRASE'] = '' unless ENV.key? 'ENDICIA_PASS_PHRASE'
+ENV['ENDICIA_TOKEN'] = '' unless ENV.key? 'ENDICIA_TOKEN'
+ENV['ENDICIA_REQUESTER_ID'] = '' unless ENV.key? 'ENDICIA_REQUESTER_ID'
+
 RSpec.configure do |c|
   c.mock_with :rspec
   c.include RSpec::XSD
