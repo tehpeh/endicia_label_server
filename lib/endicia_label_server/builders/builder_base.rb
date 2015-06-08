@@ -43,10 +43,11 @@ module EndiciaLabelServer
       end
 
       def add_hash(root_key, data)
-        xml_root_key = Util.camelize(root_key)
+        xml_root_key = (root_key.is_a? String) ? root_key : Util.camelize(root_key)
         root << Element.new(xml_root_key).tap do |org|
           data.each_pair do |key, value|
-            org << element_with_value(Util.camelize(key), value)
+            xml_child_key = (key.is_a? String) ? key : Util.camelize(key)
+            org << element_with_value(xml_child_key, value)
           end
         end
       end
