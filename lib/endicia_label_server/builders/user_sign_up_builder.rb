@@ -13,6 +13,7 @@ module EndiciaLabelServer
       #
       def initialize(opts = {})
         super 'UserSignUpRequest', opts
+        root[:TokenRequested] = 'true'
       end
 
       def post_field
