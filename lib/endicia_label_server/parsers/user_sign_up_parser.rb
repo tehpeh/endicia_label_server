@@ -1,7 +1,7 @@
 module EndiciaLabelServer
   module Parsers
     class UserSignUpParser < ParserBase
-      attr_accessor :confirmation_number, :account_id
+      attr_accessor :confirmation_number, :account_id, :token
 
       def value(value)
         super
@@ -11,6 +11,8 @@ module EndiciaLabelServer
           self.confirmation_number = string_value
         elsif switch_active? :AccountID
           self.account_id = string_value
+        elsif switch_active? :Token
+          self.token = string_value
         end
       end
 
