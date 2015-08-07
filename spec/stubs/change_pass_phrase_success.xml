@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ChangePassPhraseRequestResponse>
+  <Status>0</Status>
+  <ErrorMessage></ErrorMessage>
+  <RequesterID>123</RequesterID>
+  <RequestID>123</RequestID>
+  <Token>12343</Token>
+</ChangePassPhraseRequestResponse>
