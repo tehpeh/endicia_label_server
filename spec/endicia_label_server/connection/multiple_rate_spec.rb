@@ -57,7 +57,7 @@ describe EndiciaLabelServer::Connection, '.rates' do
         {:total=>"27.68", :service_code=>"PriorityExpress", :service_name=>"Priority Mail Express"},
         {:total=>"2.56", :service_code=>"LibraryMail", :service_name=>"Library Mail"},
         {:total=>"2.69", :service_code=>"MediaMail", :service_name=>"Media Mail"},
-        {:total=>"6.68", :service_code=>nil, :service_name=>"Parcel Select Barcoded Nonpresorted"}
+        {:total=>"6.68", :service_code=>"ParcelSelect", :service_name=>"Parcel Select Barcoded Nonpresorted"}
       ]
     end
   end
@@ -92,7 +92,7 @@ describe EndiciaLabelServer::Connection, '.rates' do
         {:total=>"27.68", :service_code=>"PriorityExpress", :service_name=>"Priority Mail Express"},
         {:total=>"2.56", :service_code=>"LibraryMail", :service_name=>"Library Mail"},
         {:total=>"2.69", :service_code=>"MediaMail", :service_name=>"Media Mail"},
-        {:total=>"6.68", :service_code=>nil, :service_name=>"Parcel Select Barcoded Nonpresorted"}
+        {:total=>"6.68", :service_code=>"ParcelSelect", :service_name=>"Parcel Select Barcoded Nonpresorted"}
       ]
     end
   end
