@@ -16,4 +16,21 @@ module EndiciaLabelServer
     'FirstClassPackageInternatiionalService' => 'First-Class Package International Service',
     'PriorityMailInternational' => 'Priority Mail International'
   }
+
+  MAILPIECESHAPES = [
+    'Flat',
+    'Letter',
+    'FlatRateGiftCardEnvelope',
+    'FlatRatePaddedEnvelope',
+    'LargeParcel',
+    'Parcel',
+    'SmallFlatRateEnvelope',
+    'FlatRateLegalEnvelope',
+    'SmallFlatRateEnvelope',
+    'Parcel',
+    'FlatRateEnvelope',
+    'SmallFlatRateBox',
+    'MediumFlatRateBox',
+    'LargeFlatRateBox'
+  ]
 end

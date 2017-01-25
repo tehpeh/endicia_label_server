@@ -1,7 +1,12 @@
 module EndiciaLabelServer
   GEM_NAME = 'endicia_label_server'
 
-  autoload :SERVICES,              "#{GEM_NAME}/services"
+  autoload :SERVICES,                "#{GEM_NAME}/services"
+  autoload :MAILPIECESHAPES,                "#{GEM_NAME}/services"
+
+  module Service
+    autoload :MailpieceShape,          "#{GEM_NAME}/service/mailpiece_shape"
+  end
 
   autoload :Version,               "#{GEM_NAME}/version"
   autoload :Connection,            "#{GEM_NAME}/connection"
