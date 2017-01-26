@@ -4,9 +4,9 @@ Gem::Specification.new do |gem|
   gem.name        = 'endicia_label_server'
   gem.version     = EndiciaLabelServer::Version::STRING
   gem.platform    = Gem::Platform::RUBY
-  gem.authors     = ['Paul Trippett']
-  gem.email       = ['paul@veeqo.com']
-  gem.homepage    = 'http://github.com/ptrippett/endicia_label_server'
+  gem.authors     = ['Veeqo']
+  gem.email       = ['helpme@veeqo.com']
+  gem.homepage    = 'http://github.com/matt423/endicia_label_server'
   gem.summary     = 'Endicia LabelServer'
   gem.description = '''
     Gem for accessing the Endicia Label Server XML API from Ruby
