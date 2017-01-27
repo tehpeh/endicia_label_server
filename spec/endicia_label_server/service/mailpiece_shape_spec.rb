@@ -140,4 +140,20 @@ describe EndiciaLabelServer::Service, '#all' do
       expect(subject).to match_array([flat_mailpiece, parcel_mailpiece, flat_rate_envelope_mailpiece, flat_rate_legal_envelope_mailpiece, flat_rate_padded_envelope_mailpiece, small_flat_rate_box_mailpiece, medium_flat_rate_box_mailpiece, large_flat_rate_box_mailpiece])
     end
   end
+
+  context 'when the service is Priority Mail Express Flat Rate Envelope' do
+    let(:service_name) { 'Priority Mail Express Flat Rate Envelope' }
+
+    it "returns the valid mailpiece shapes for the service" do
+      expect(subject).to match_array([flat_rate_envelope_mailpiece])
+    end
+  end
+
+  context 'when the service is Priority Mail Flat Rate Envelope' do
+    let(:service_name) { 'Priority Mail Flat Rate Envelope' }
+
+    it "returns the valid mailpiece shapes for the service" do
+      expect(subject).to match_array([flat_rate_envelope_mailpiece])
+    end
+  end
 end
