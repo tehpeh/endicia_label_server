@@ -12,8 +12,8 @@ module EndiciaLabelServer
     'CriticalMail' => 'Critical Mail',
     'ExpressMailInternational' => 'Express Mail International',
     'PriorityMailExpressInternational' => 'Priority Mail Express International',
-    'FirstClassMailInternational' => 'First-Class Mail International',
-    'FirstClassPackageInternatiionalService' => 'First-Class Package International Service',
+    'FirstClassMailInternational' => 'First Class Mail International',
+    'FirstClassPackageInternationalService' => 'First Class Package International Service',
     'PriorityMailInternational' => 'Priority Mail International',
     'PriorityMailFlatRateEnvelope' => 'Priority Mail Flat Rate Envelope',
     'PriorityMailExpressFlatRateEnvelope' => 'Priority Mail Express Flat Rate Envelope'
