@@ -52,12 +52,12 @@ describe EndiciaLabelServer::Connection, '.rates' do
       expect(subject.rated_shipments).not_to be_empty
       expect(subject.rated_shipments.count).to eql 6
       expect(subject.rated_shipments).to eql [
-        {:total=>"1.93", :service_code=>"First", :service_name=>"First-Class Mail"},
-        {:total=>"6.51", :service_code=>"Priority", :service_name=>"Priority Mail"},
-        {:total=>"27.68", :service_code=>"PriorityExpress", :service_name=>"Priority Mail Express"},
-        {:total=>"2.56", :service_code=>"LibraryMail", :service_name=>"Library Mail"},
-        {:total=>"2.69", :service_code=>"MediaMail", :service_name=>"Media Mail"},
-        {:total=>"6.68", :service_code=>"ParcelSelect", :service_name=>"Parcel Select Barcoded Nonpresorted"}
+        {:mail_class => 'First', :total=>"1.93", :service_code=>"First", :service_name=>"First-Class Mail"},
+        {:mail_class => 'Priority', :total=>"6.51", :service_code=>"Priority", :service_name=>"Priority Mail"},
+        {:mail_class => 'PriorityExpress', :total=>"27.68", :service_code=>"PriorityExpress", :service_name=>"Priority Mail Express"},
+        {:mail_class => 'LibraryMail', :total=>"2.56", :service_code=>"LibraryMail", :service_name=>"Library Mail"},
+        {:mail_class => 'MediaMail', :total=>"2.69", :service_code=>"MediaMail", :service_name=>"Media Mail"},
+        {:mail_class => 'ParcelSelect', :total=>"6.68", :service_code=>"ParcelSelect", :service_name=>"Parcel Select Barcoded Nonpresorted"}
       ]
     end
   end
@@ -87,12 +87,12 @@ describe EndiciaLabelServer::Connection, '.rates' do
       expect(subject.rated_shipments).not_to be_empty
       expect(subject.rated_shipments.count).to eql 6
       expect(subject.rated_shipments).to eql [
-        {:total=>"1.93", :service_code=>"First", :service_name=>"First-Class Mail"},
-        {:total=>"6.51", :service_code=>"Priority", :service_name=>"Priority Mail"},
-        {:total=>"27.68", :service_code=>"PriorityExpress", :service_name=>"Priority Mail Express"},
-        {:total=>"2.56", :service_code=>"LibraryMail", :service_name=>"Library Mail"},
-        {:total=>"2.69", :service_code=>"MediaMail", :service_name=>"Media Mail"},
-        {:total=>"6.68", :service_code=>"ParcelSelect", :service_name=>"Parcel Select Barcoded Nonpresorted"}
+        {:mail_class => 'First', :total=>"1.93", :service_code=>"First", :service_name=>"First-Class Mail"},
+        {:mail_class => 'Priority', :total=>"6.51", :service_code=>"Priority", :service_name=>"Priority Mail"},
+        {:mail_class => 'PriorityExpress', :total=>"27.68", :service_code=>"PriorityExpress", :service_name=>"Priority Mail Express"},
+        {:mail_class => 'LibraryMail', :total=>"2.56", :service_code=>"LibraryMail", :service_name=>"Library Mail"},
+        {:mail_class => 'MediaMail', :total=>"2.69", :service_code=>"MediaMail", :service_name=>"Media Mail"},
+        {:mail_class => 'ParcelSelect', :total=>"6.68", :service_code=>"ParcelSelect", :service_name=>"Parcel Select Barcoded Nonpresorted"}
       ]
     end
   end
