@@ -9,6 +9,17 @@ describe EndiciaLabelServer::Connection, '.rates' do
     Excon.stubs.clear
   end
 
+  let(:expected_rates) {
+    [
+      {:mail_class => 'First', :total=>"1.93", :service_code=>"First", :service_name=>"First-Class Mail"},
+      {:mail_class => 'Priority', :total=>"6.51", :service_code=>"Priority", :service_name=>"Priority Mail"},
+      {:mail_class => 'PriorityExpress', :total=>"27.68", :service_code=>"PriorityExpress", :service_name=>"Priority Mail Express"},
+      {:mail_class => 'LibraryMail', :total=>"2.56", :service_code=>"LibraryMail", :service_name=>"Library Mail"},
+      {:mail_class => 'MediaMail', :total=>"2.69", :service_code=>"MediaMail", :service_name=>"Media Mail"},
+      {:mail_class => 'ParcelSelect', :total=>"6.68", :service_code=>"ParcelSelect", :service_name=>"Parcel Select Barcoded Nonpresorted"}
+    ]
+  }
+
   def apply_config_to_rate_builder(rate_builder)
     rate_builder.add :certified_intermediary, {
       account_id: ENV['ENDICIA_ACCOUNT_ID'],
@@ -51,14 +62,7 @@ describe EndiciaLabelServer::Connection, '.rates' do
       expect { subject }.not_to raise_error
       expect(subject.rated_shipments).not_to be_empty
       expect(subject.rated_shipments.count).to eql 6
-      expect(subject.rated_shipments).to eql [
-        {:mail_class => 'First', :total=>"1.93", :service_code=>"First", :service_name=>"First-Class Mail"},
-        {:mail_class => 'Priority', :total=>"6.51", :service_code=>"Priority", :service_name=>"Priority Mail"},
-        {:mail_class => 'PriorityExpress', :total=>"27.68", :service_code=>"PriorityExpress", :service_name=>"Priority Mail Express"},
-        {:mail_class => 'LibraryMail', :total=>"2.56", :service_code=>"LibraryMail", :service_name=>"Library Mail"},
-        {:mail_class => 'MediaMail', :total=>"2.69", :service_code=>"MediaMail", :service_name=>"Media Mail"},
-        {:mail_class => 'ParcelSelect', :total=>"6.68", :service_code=>"ParcelSelect", :service_name=>"Parcel Select Barcoded Nonpresorted"}
-      ]
+      expect(subject.rated_shipments).to eql expected_rates
     end
   end
 
@@ -86,14 +90,7 @@ describe EndiciaLabelServer::Connection, '.rates' do
       expect { subject }.not_to raise_error
       expect(subject.rated_shipments).not_to be_empty
       expect(subject.rated_shipments.count).to eql 6
-      expect(subject.rated_shipments).to eql [
-        {:mail_class => 'First', :total=>"1.93", :service_code=>"First", :service_name=>"First-Class Mail"},
-        {:mail_class => 'Priority', :total=>"6.51", :service_code=>"Priority", :service_name=>"Priority Mail"},
-        {:mail_class => 'PriorityExpress', :total=>"27.68", :service_code=>"PriorityExpress", :service_name=>"Priority Mail Express"},
-        {:mail_class => 'LibraryMail', :total=>"2.56", :service_code=>"LibraryMail", :service_name=>"Library Mail"},
-        {:mail_class => 'MediaMail', :total=>"2.69", :service_code=>"MediaMail", :service_name=>"Media Mail"},
-        {:mail_class => 'ParcelSelect', :total=>"6.68", :service_code=>"ParcelSelect", :service_name=>"Parcel Select Barcoded Nonpresorted"}
-      ]
+      expect(subject.rated_shipments).to eql expected_rates
     end
   end
 end
