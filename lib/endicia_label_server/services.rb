@@ -6,7 +6,6 @@ module EndiciaLabelServer
     'LibraryMail' => 'Library Mail',
     'MediaMail' => 'Media Mail',
     'StandardPost' => 'Standard Post',
-    'ParcelSelect' => 'Parcel Select',
     'ParcelSelect' => 'Parcel Select Barcoded Nonpresorted',
     'Priority' => 'Priority Mail',
     'CriticalMail' => 'Critical Mail',
