@@ -50,9 +50,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  codeclimate-test-reporter
+  codeclimate-test-reporter (~> 1.0.0)
   endicia_label_server!
   faker
   rake
   rspec
   rspec-xsd
+  simplecov
+
+BUNDLED WITH
+   1.13.6
