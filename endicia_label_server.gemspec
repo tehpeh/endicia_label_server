@@ -6,11 +6,9 @@ Gem::Specification.new do |gem|
   gem.platform    = Gem::Platform::RUBY
   gem.authors     = ['Veeqo']
   gem.email       = ['helpme@veeqo.com']
-  gem.homepage    = 'http://github.com/matt423/endicia_label_server'
-  gem.summary     = 'Endicia LabelServer'
-  gem.description = '''
-    Gem for accessing the Endicia Label Server XML API from Ruby
-  '''
+  gem.homepage    = 'http://github.com/veeqo/endicia_label_server'
+  gem.summary     = 'Endicia Label Server'
+  gem.description = 'Gem for accessing the Endicia Label Server XML API from Ruby'
 
   gem.license     = 'AGPL'
 
