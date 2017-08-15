@@ -30,7 +30,7 @@ Yard documentation can be found at [RubyDoc](http://www.rubydoc.info/github/ptri
 ```ruby
 require 'endicia_label_server'
 server = EndiciaLabelServer::Connection.new(test_mode: true)
-server.rate do |rate_builder|
+response = server.rate do |rate_builder|
   rate_builder.add :certified_intermediary, {
     account_id: ENV['ENDICIA_ACCOUNT_ID'],
     pass_phrase: ENV['ENDICIA_PASS_PHRASE'],
