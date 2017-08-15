@@ -27,30 +27,33 @@ Yard documentation can be found at [RubyDoc](http://www.rubydoc.info/github/ptri
 
 ### Return rates
 
-    require 'endicia_label_server'
-    server = EndiciaLabelServer::Connection.new(test_mode: true)
-    server.rate do |rate_builder|
-      rate_builder.add :certified_intermediary, {
-        account_id: ENV['ENDICIA_ACCOUNT_ID'],
-        pass_phrase: ENV['ENDICIA_PASS_PHRASE'],
-        token: ENV['ENDICIA_TOKEN']
-      }
-      rate_builder.add :requester_id, ENV['ENDICIA_REQUESTER_ID']
-      rate_builder.add :mail_class, EndiciaLabelServer::SERVICES.keys.first
-      rate_builder.add :mailpiece_dimensions, {
-        length: '10',
-        width: '10',
-        height: '10'
-      }
-      rate_builder.add :weight_oz, "2"
-      rate_builder.add :from_postal_code, '90210'
-      rate_builder.add :to_postal_code, '02215'
-      rate_builder.add :to_country_code, 'US'
-    end
+```ruby
+require 'endicia_label_server'
+server = EndiciaLabelServer::Connection.new(test_mode: true)
+server.rate do |rate_builder|
+  rate_builder.add :certified_intermediary, {
+    account_id: ENV['ENDICIA_ACCOUNT_ID'],
+    pass_phrase: ENV['ENDICIA_PASS_PHRASE'],
+    token: ENV['ENDICIA_TOKEN']
+  }
+  rate_builder.add :requester_id, ENV['ENDICIA_REQUESTER_ID']
+  rate_builder.add :mail_class, EndiciaLabelServer::SERVICES.keys.first
+  rate_builder.add :mailpiece_dimensions, {
+    length: '10',
+    width: '10',
+    height: '10'
+  }
+  rate_builder.add :weight_oz, "2"
+  rate_builder.add :from_postal_code, '90210'
+  rate_builder.add :to_postal_code, '02215'
+  rate_builder.add :to_country_code, 'US'
+end
+```
 
-
-    # Then use...
-    response.success?
+```ruby
+# Then use...
+response.success?
+```
 
 ## Running the tests
 
