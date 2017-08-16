@@ -15,7 +15,9 @@ This gem is currently used in production at [Veeqo](http://www.veeqo.com)
 
 ## Installation
 
-    gem install endicia_label_server
+```sh
+$ gem install endicia_label_server
+```
 
 ...or add it to your project's [Gemfile](http://bundler.io/).
 
@@ -27,14 +29,18 @@ Yard documentation can be found at [RubyDoc](http://www.rubydoc.info/github/ptri
 
 ### Return rates
 
+```sh
+# For testing on the command line
+$ irb -Ilib
+```
+
 ```ruby
 require 'endicia_label_server'
 server = EndiciaLabelServer::Connection.new(test_mode: true)
 response = server.rate do |rate_builder|
   rate_builder.add :certified_intermediary, {
     account_id: ENV['ENDICIA_ACCOUNT_ID'],
-    pass_phrase: ENV['ENDICIA_PASS_PHRASE'],
-    token: ENV['ENDICIA_TOKEN']
+    pass_phrase: ENV['ENDICIA_PASS_PHRASE'] # or token: ENV['ENDICIA_TOKEN']
   }
   rate_builder.add :requester_id, ENV['ENDICIA_REQUESTER_ID']
   rate_builder.add :mail_class, EndiciaLabelServer::SERVICES.keys.first

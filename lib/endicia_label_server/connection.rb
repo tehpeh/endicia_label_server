@@ -17,8 +17,8 @@ module EndiciaLabelServer
 
     attr_accessor :url
 
-    TEST_URL = 'https://LabelServer.Endicia.com'
-    LIVE_URL = 'https://LabelServer.Endicia.com'
+    TEST_URL = 'https://elstestserver.endicia.com'
+    LIVE_URL = 'https://labelserver.endicia.com'
     ROOT_PATH = '/LabelService/EwsLabelService.asmx/'
 
     GET_POSTAGE_LABEL_ENDPOINT = 'GetPostageLabelXML'
