@@ -1,12 +1,12 @@
 require File.expand_path('../lib/endicia_label_server/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.name        = 'endicia_label_server'
+  gem.name        = 'endicia_label_server-ruby'
   gem.version     = EndiciaLabelServer::Version::STRING
   gem.platform    = Gem::Platform::RUBY
   gem.authors     = ['Veeqo']
   gem.email       = ['helpme@veeqo.com']
-  gem.homepage    = 'http://github.com/veeqo/endicia_label_server'
+  gem.homepage    = 'https://github.com/veeqo/endicia_label_server-ruby'
   gem.summary     = 'Endicia Label Server'
   gem.description = 'Gem for accessing the Endicia Label Server XML API from Ruby'
 

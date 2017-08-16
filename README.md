@@ -16,7 +16,7 @@ This gem is currently used in production at [Veeqo](http://www.veeqo.com)
 ## Installation
 
 ```sh
-$ gem install endicia_label_server
+$ gem install endicia_label_server-ruby
 ```
 
 ...or add it to your project's [Gemfile](http://bundler.io/).
