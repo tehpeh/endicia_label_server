@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.summary     = 'Endicia Label Server'
   gem.description = 'Gem for accessing the Endicia Label Server XML API from Ruby'
 
-  gem.license     = 'AGPL'
+  gem.license     = 'AGPL-3.0'
 
   gem.required_rubygems_version = '>= 1.3.6'
 

@@ -31,7 +31,7 @@ Yard documentation can be found at [RubyDoc](http://www.rubydoc.info/github/ptri
 
 ```sh
 # For testing on the command line
-$ irb -Ilib
+$ rake console
 ```
 
 ```ruby
