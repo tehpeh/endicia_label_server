@@ -1,8 +1,4 @@
-[![Gem Version](https://img.shields.io/gem/v/endicia_label_server.svg?style=flat-square)](http://badge.fury.io/rb/endicia_label_server)
-[![Dependency Status](https://img.shields.io/gemnasium/ptrippett/endicia_label_server.svg?style=flat-square)](https://gemnasium.com/ptrippett/endicia_label_server)
-[![Build Status](https://img.shields.io/travis/ptrippett/endicia_label_server.svg?style=flat-square)](https://travis-ci.org/ptrippett/endicia_label_server)
-[![Coverage Status](https://img.shields.io/codeclimate/coverage/github/ptrippett/endicia_label_server.svg?style=flat-square)](https://codeclimate.com/github/ptrippett/endicia_label_server/coverage)
-[![Code Climate](https://img.shields.io/codeclimate/github/ptrippett/endicia_label_server.svg?style=flat-square)](https://codeclimate.com/github/ptrippett/endicia_label_server)
+[![Gem Version](https://img.shields.io/gem/v/endicia_label_server-ruby.svg?style=flat-square)](http://badge.fury.io/rb/endicia_label_server-ruby)
 
 # Endicia Label Server
 
@@ -23,7 +19,7 @@ $ gem install endicia_label_server-ruby
 
 ## Documentation
 
-Yard documentation can be found at [RubyDoc](http://www.rubydoc.info/github/ptrippett/endicia_label_server).
+Yard documentation can be found at [RubyDoc](http://www.rubydoc.info/github/veeqo/endicia_label_server-ruby).
 
 ## Sample Usage
 
