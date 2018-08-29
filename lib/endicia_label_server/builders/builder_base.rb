@@ -20,8 +20,9 @@ module EndiciaLabelServer
       #
       # @param [String] root_name The Name of the XML Root
       # @return [void]
-      def initialize(root_name, opts = {})
-        initialize_xml_roots root_name
+      def initialize(root_name, opts = {}, root_attributes = nil)
+        initialize_xml_roots(root_name)
+        assign_root_attributes(root_attributes) if root_attributes
 
         document << root
 
@@ -74,6 +75,13 @@ module EndiciaLabelServer
       end
 
       private
+
+      def assign_root_attributes(root_attributes)
+        root_attributes.each do |attr_key, attr_value|
+          root_attribute_key = Util.camelize(attr_key)
+          root[root_attribute_key] = attr_value
+        end
+      end
 
       def initialize_xml_roots(root_name)
         self.document = Document.new

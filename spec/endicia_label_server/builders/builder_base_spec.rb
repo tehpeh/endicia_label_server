@@ -44,4 +44,25 @@ describe EndiciaLabelServer::Builders::BuilderBase do
       end
     end
   end
+
+  describe '.initialize' do
+    let(:options) { { foo: 'bar' } }
+    let(:root_attributes) { nil }
+    let(:builder) { EndiciaLabelServer::Builders::BuilderBase.new('ABuilder', options, root_attributes) }
+
+    subject { builder.to_xml.gsub(/\s+/, "") }
+
+    context 'when passed with root attributes' do
+      let(:root_attributes) do
+        {
+          label_type: 'international',
+          label_subtype: 'another'
+        }
+      end
+
+      it 'adds the options as root attributes on the root object and returns valid XML' do
+        should eql '<ABuilderLabelType="international"LabelSubtype="another"><Foo>bar</Foo></ABuilder>'
+      end
+    end
+  end
 end
