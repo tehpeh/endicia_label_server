@@ -66,8 +66,8 @@ module EndiciaLabelServer
       # Returns a String representation of the XML document being built
       #
       # @return [String]
-      def to_xml
-        Ox.to_xml document
+      def to_xml(opts = {})
+        Ox.to_xml(document, opts)
       end
 
       def to_http_post
