@@ -11,8 +11,8 @@ module EndiciaLabelServer
 
       # Initializes a new {RateBuilder} object
       #
-      def initialize(opts = {})
-        super 'PostageRatesRequest', opts
+      def initialize(opts = {}, root_attributes = nil)
+        super('PostageRatesRequest', opts, root_attributes)
       end
 
       def post_field
