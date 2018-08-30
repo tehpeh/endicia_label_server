@@ -4,6 +4,7 @@ module EndiciaLabelServer
   module Parsers
     class PostageLabelParser < ParserBase
       attr_accessor :pic,
+                    :customs_number,
                     :tracking_number,
                     :final_postage,
                     :transaction_id,
@@ -24,12 +25,16 @@ module EndiciaLabelServer
 
         element = underscore(@current_element)
         string_value = value.as_s
-        if switch_active? :Base64LabelImage
+        if label_switch_active?
           parse_label(string_value)
         else
           function_name = "#{element}="
           send(function_name, string_value) if respond_to?(function_name)
         end
+      end
+
+      def label_switch_active?
+        switch_active?(:Base64LabelImage) || (switch_active?(:Label, :Image) && current_attributes[:PartNumber] == '1')
       end
 
       def underscore(value)

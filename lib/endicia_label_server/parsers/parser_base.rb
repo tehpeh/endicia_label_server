@@ -6,10 +6,12 @@ module EndiciaLabelServer
     class ParserBase < ::Ox::Sax
       attr_accessor :switches,
                     :status_code,
-                    :error_description
+                    :error_description,
+                    :current_attributes
 
       def initialize
         self.switches = {}
+        self.current_attributes = {}
       end
 
       def start_element(name)
@@ -17,7 +19,16 @@ module EndiciaLabelServer
       end
 
       def end_element(name)
+        reset_attributes!
         element_tracker_switch name, false
+      end
+
+      def reset_attributes!
+        self.current_attributes = {}
+      end
+
+      def attr(name, value)
+        self.current_attributes[name] = value
       end
 
       def value(value)
