@@ -19,11 +19,11 @@ module EndiciaLabelServer
       end
 
       def end_element(name)
-        reset_attributes!
+        reset_current_attributes!
         element_tracker_switch name, false
       end
 
-      def reset_attributes!
+      def reset_current_attributes!
         self.current_attributes = {}
       end
 
