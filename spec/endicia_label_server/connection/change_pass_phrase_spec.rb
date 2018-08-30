@@ -31,9 +31,9 @@ describe EndiciaLabelServer::Connection, '.change_pass_phrase' do
         connection.add :certified_intermediary, {
           account_id: '1234567',
           pass_phrase: 'SUPER SECRET AND SECURE PASSWORD',
-          token: 'AGAIN ANOTHER AWESOME SECRET TOKEN'
-        },
-        new_pass_phrase: 'iAmAPassword1_c'
+          token: 'AGAIN ANOTHER AWESOME SECRET TOKEN',
+          new_pass_phrase: 'iAmAPassword1_c'
+        }
       end
     end
 
