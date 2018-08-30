@@ -31,17 +31,16 @@ module EndiciaLabelServer
 
       def add(key, value, parent_element = nil)
         parent = parent_element || root
-        element_key = (key.is_a? String) ? key : Util.camelize(key)
+        key = (key.is_a? String) ? key : Util.camelize(key)
 
-        return add_hash_values(parent, element_key, value) if value.is_a?(Hash)
-        return add_array_items(parent, element_key, value) if value.is_a?(Array)
-        return add_single_element(parent, element_key, value)
+        return add_hash_values(parent, key, value) if value.is_a?(Hash)
+        return add_array_items(parent, key, value) if value.is_a?(Array)
+        return add_single_element(parent, key, value)
       end
 
       def assign_root_attributes(root_attributes)
         root_attributes.each do |attr_key, attr_value|
-          root_attribute_key = Util.camelize(attr_key)
-          root[root_attribute_key] = attr_value
+          root[Util.camelize(attr_key)] = attr_value
         end
       end
 
