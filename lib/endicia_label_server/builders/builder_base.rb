@@ -38,6 +38,13 @@ module EndiciaLabelServer
         return add_single_element(parent, element_key, value)
       end
 
+      def assign_root_attributes(root_attributes)
+        root_attributes.each do |attr_key, attr_value|
+          root_attribute_key = Util.camelize(attr_key)
+          root[root_attribute_key] = attr_value
+        end
+      end
+
       # Returns a String representation of the XML document being built
       #
       # @return [String]
@@ -68,13 +75,6 @@ module EndiciaLabelServer
               add(child_key, child_value, element)
             end
           end
-        end
-      end
-
-      def assign_root_attributes(root_attributes)
-        root_attributes.each do |attr_key, attr_value|
-          root_attribute_key = Util.camelize(attr_key)
-          root[root_attribute_key] = attr_value
         end
       end
 

@@ -77,6 +77,7 @@ describe EndiciaLabelServer::Connection, '.get_label' do
 
     subject do
       server.get_label do |b|
+        b.assign_root_attributes({ label_type: 'International', label_subtype: 'Integrated' })
         b.add :test, 'true'
         b.add :account_id, ENV['ENDICIA_ACCOUNT_ID']
         b.add :requester_id, ENV['ENDICIA_REQUESTER_ID']
