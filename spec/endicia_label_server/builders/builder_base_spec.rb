@@ -26,46 +26,55 @@ describe EndiciaLabelServer::Builders::BuilderBase do
     end
   end
 
-  describe '.add_array' do
-    let(:builder) { EndiciaLabelServer::Builders::BuilderBase.new 'MyBuilder' }
+  describe '.add' do
+    context 'when the value type is a hash' do
+      context "When passed symbolized keys" do
+        let(:builder) { EndiciaLabelServer::Builders::BuilderBase.new 'MyBuilder' }
 
-    subject { dump_xml(builder) }
+        subject { dump_xml(builder) }
 
-    before do
-      builder.add_array :test, ['1', '2']
+        before do
+          builder.add :test, { id: '1', source: 'test' }
+        end
+
+        it "should return valid XML" do
+          should eql '<MyBuilder><Test><ID>1</ID><Source>test</Source></Test></MyBuilder>'
+        end
+      end
+
+      context "When passed string keys" do
+        let(:builder) { EndiciaLabelServer::Builders::BuilderBase.new 'MyBuilder' }
+
+        subject { dump_xml(builder) }
+
+        before do
+          builder.add 'TestTest', { 'ID' => '1', 'SourceSource' => 'test' }
+        end
+
+        it "should return valid XML" do
+          should eql '<MyBuilder><TestTest><ID>1</ID><SourceSource>test</SourceSource></TestTest></MyBuilder>'
+        end
+      end
     end
 
-    it "should return valid XML" do
-      should eql '<MyBuilder><Test><TestID>1</TestID><TestID>2</TestID></Test></MyBuilder>'
-    end
-  end
-
-  describe '.add_hash' do
-    context "When passed symbolized keys" do
+    context 'when the value type is an array' do
       let(:builder) { EndiciaLabelServer::Builders::BuilderBase.new 'MyBuilder' }
 
       subject { dump_xml(builder) }
 
       before do
-        builder.add_hash :test, { id: '1', source: 'test' }
+        builder.add :test, [
+          customs_item_1: {
+            foo: 'bar'
+          },
+          customs_item_2: {
+            another: 'value'
+          }
+        ]
       end
 
       it "should return valid XML" do
-        should eql '<MyBuilder><Test><ID>1</ID><Source>test</Source></Test></MyBuilder>'
-      end
-    end
-
-    context "When passed string keys" do
-      let(:builder) { EndiciaLabelServer::Builders::BuilderBase.new 'MyBuilder' }
-
-      subject { dump_xml(builder) }
-
-      before do
-        builder.add_hash 'TestTest', { 'ID' => '1', 'SourceSource' => 'test' }
-      end
-
-      it "should return valid XML" do
-        should eql '<MyBuilder><TestTest><ID>1</ID><SourceSource>test</SourceSource></TestTest></MyBuilder>'
+        should eql '<MyBuilder><Test><CustomsItem1><Foo>bar</Foo></CustomsItem1><CustomsItem2><Another>value</Another></CustomsItem2></Test></MyBuilder>'
       end
     end
   end

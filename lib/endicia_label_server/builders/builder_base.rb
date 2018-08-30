@@ -26,41 +26,16 @@ module EndiciaLabelServer
 
         document << root
 
-        opts.each_pair { |k, v| add(k, v) }
+        opts.each_pair { |k, v| add(k, v, root) }
       end
 
-      def add(*args)
-        first_arg = args.first
-        last_arg = args.last
-        root_key = Util.camelize(first_arg)
+      def add(key, value, parent_element = nil)
+        parent = parent_element || root
+        element_key = (key.is_a? String) ? key : Util.camelize(key)
 
-        if last_arg.is_a? Hash
-          add_hash root_key, last_arg
-        elsif last_arg.is_a? Array
-
-        else
-          root << element_with_value(root_key, last_arg)
-        end
-      end
-
-      def add_hash(root_key, data)
-        xml_root_key = (root_key.is_a? String) ? root_key : Util.camelize(root_key)
-        root << Element.new(xml_root_key).tap do |org|
-          data.each_pair do |key, value|
-            xml_child_key = (key.is_a? String) ? key : Util.camelize(key)
-            org << element_with_value(xml_child_key, value)
-          end
-        end
-      end
-
-      def add_array(root_key, data)
-        xml_root_key = Util.camelize(root_key)
-        root << Element.new(xml_root_key).tap do |org|
-          child_key = "#{Util.singularize(xml_root_key)}ID"
-          data.each do |value|
-            org << element_with_value(child_key, value)
-          end
-        end
+        return add_hash_values(parent, element_key, value) if value.is_a?(Hash)
+        return add_array_items(parent, element_key, value) if value.is_a?(Array)
+        return add_single_element(parent, element_key, value)
       end
 
       # Returns a String representation of the XML document being built
@@ -75,6 +50,26 @@ module EndiciaLabelServer
       end
 
       private
+
+      def add_hash_values(parent_element, key, value)
+        parent_element << Element.new(key).tap do |element|
+          value.each_pair { |child_key, child_value| add(child_key, child_value, element) }
+        end
+      end
+
+      def add_single_element(parent_element, key, value)
+        parent_element << element_with_value(key, value)
+      end
+
+      def add_array_items(parent_element, key, value)
+        parent_element << Element.new(key).tap do |element|
+          value.each do |array_item|
+            array_item.each_pair do |child_key, child_value|
+              add(child_key, child_value, element)
+            end
+          end
+        end
+      end
 
       def assign_root_attributes(root_attributes)
         root_attributes.each do |attr_key, attr_value|
