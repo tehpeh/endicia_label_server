@@ -33,8 +33,8 @@ module EndiciaLabelServer
         parent = parent_element || root
         key = (key.is_a? String) ? key : Util.camelize(key)
 
-        return add_hash_values(parent, key, value) if value.is_a?(Hash)
-        return add_array_items(parent, key, value) if value.is_a?(Array)
+        return add_element_from_hash_values(parent, key, value) if value.is_a?(Hash)
+        return add_element_from_array_items(parent, key, value) if value.is_a?(Array)
         return add_single_element(parent, key, value)
       end
 
@@ -57,17 +57,13 @@ module EndiciaLabelServer
 
       private
 
-      def add_hash_values(parent_element, key, value)
+      def add_element_from_hash_values(parent_element, key, value)
         parent_element << Element.new(key).tap do |element|
           value.each_pair { |child_key, child_value| add(child_key, child_value, element) }
         end
       end
 
-      def add_single_element(parent_element, key, value)
-        parent_element << element_with_value(key, value)
-      end
-
-      def add_array_items(parent_element, key, value)
+      def add_element_from_array_items(parent_element, key, value)
         parent_element << Element.new(key).tap do |element|
           value.each do |array_item|
             array_item.each_pair do |child_key, child_value|
@@ -75,6 +71,10 @@ module EndiciaLabelServer
             end
           end
         end
+      end
+
+      def add_single_element(parent_element, key, value)
+        parent_element << element_with_value(key, value)
       end
 
       def initialize_xml_roots(root_name)
