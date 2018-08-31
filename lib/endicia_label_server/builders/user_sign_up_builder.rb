@@ -11,8 +11,8 @@ module EndiciaLabelServer
 
       # Initializes a new {RateBuilder} object
       #
-      def initialize(opts = {})
-        super 'UserSignUpRequest', opts
+      def initialize(opts = {}, root_attributes = nil)
+        super('UserSignUpRequest', opts, root_attributes)
         root[:TokenRequested] = 'true'
       end
 

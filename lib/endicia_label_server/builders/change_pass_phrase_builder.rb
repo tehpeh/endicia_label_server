@@ -5,8 +5,8 @@ module EndiciaLabelServer
     class ChangePassPhraseBuilder < BuilderBase
       include Ox
 
-      def initialize(opts = {})
-        super 'ChangePassPhraseRequest', opts
+      def initialize(opts = {}, root_attributes = nil)
+        super('ChangePassPhraseRequest', opts, root_attributes)
         root[:TokenRequested] = 'false'
       end
 
