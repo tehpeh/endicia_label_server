@@ -32,6 +32,8 @@ module EndiciaLabelServer
     'FlatRateEnvelope',
     'SmallFlatRateBox',
     'MediumFlatRateBox',
-    'LargeFlatRateBox'
+    'LargeFlatRateBox',
+    'RegionalRateBoxA',
+    'RegionalRateBoxB'
   ]
 end

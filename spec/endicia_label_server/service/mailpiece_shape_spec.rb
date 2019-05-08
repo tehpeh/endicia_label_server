@@ -18,6 +18,9 @@ describe EndiciaLabelServer::Service, '#all' do
   let(:small_flat_rate_box_mailpiece) { 'SmallFlatRateBox' }
   let(:medium_flat_rate_box_mailpiece) { 'MediumFlatRateBox' }
   let(:large_flat_rate_box_mailpiece) { 'LargeFlatRateBox' }
+  let(:regional_rate_box_a_mailpiece) { 'RegionalRateBoxA' }
+  let(:regional_rate_box_b_mailpiece) { 'RegionalRateBoxB' }
+
 
   subject { mailpiece.all }
 
@@ -41,15 +44,15 @@ describe EndiciaLabelServer::Service, '#all' do
     let(:service_name) { 'Priority Mail Express' }
 
     it "returns the valid mailpiece shapes for the service" do
-      expect(subject).to match_array([flat_mailpiece, parcel_mailpiece, large_parcel_mailpiece, flat_rate_envelope_mailpiece])
+      expect(subject).to match_array([flat_mailpiece, parcel_mailpiece, large_parcel_mailpiece, flat_rate_envelope_mailpiece, regional_rate_box_a_mailpiece, regional_rate_box_b_mailpiece])
     end
   end
 
   context 'when the service is Priority Mail Express International' do
-    let(:service_name) { 'Priority Mail Express International' }
+    let(:service_name) { 'Priority Mail Express International'  }
 
     it "returns the valid mailpiece shapes for the service" do
-      expect(subject).to match_array([flat_mailpiece, parcel_mailpiece, flatrate_envelope_mailpiece, flat_rate_padded_envelope_mailpiece])
+      expect(subject).to match_array([flat_mailpiece, parcel_mailpiece, flatrate_envelope_mailpiece, flat_rate_padded_envelope_mailpiece, regional_rate_box_a_mailpiece, regional_rate_box_b_mailpiece])
     end
   end
 
@@ -105,7 +108,7 @@ describe EndiciaLabelServer::Service, '#all' do
     let(:service_name) { 'Priority Mail' }
 
     it "returns the valid mailpiece shapes for the service" do
-      expect(subject).to match_array([flat_mailpiece, parcel_mailpiece, large_parcel_mailpiece, flat_rate_legal_envelope_mailpiece, flat_rate_padded_envelope_mailpiece, flat_rate_gift_card_envelope_mailpiece, small_flat_rate_envelope_mailpiece])
+      expect(subject).to match_array([flat_mailpiece, parcel_mailpiece, large_parcel_mailpiece, flat_rate_legal_envelope_mailpiece, flat_rate_padded_envelope_mailpiece, flat_rate_gift_card_envelope_mailpiece, small_flat_rate_envelope_mailpiece, regional_rate_box_a_mailpiece, regional_rate_box_b_mailpiece])
     end
   end
 
@@ -137,7 +140,7 @@ describe EndiciaLabelServer::Service, '#all' do
     let(:service_name) { 'Priority Mail International' }
 
     it "returns the valid mailpiece shapes for the service" do
-      expect(subject).to match_array([flat_mailpiece, parcel_mailpiece, flat_rate_envelope_mailpiece, flat_rate_legal_envelope_mailpiece, flat_rate_padded_envelope_mailpiece, small_flat_rate_box_mailpiece, medium_flat_rate_box_mailpiece, large_flat_rate_box_mailpiece])
+      expect(subject).to match_array([flat_mailpiece, parcel_mailpiece, flat_rate_envelope_mailpiece, flat_rate_legal_envelope_mailpiece, flat_rate_padded_envelope_mailpiece, small_flat_rate_box_mailpiece, medium_flat_rate_box_mailpiece, large_flat_rate_box_mailpiece, regional_rate_box_a_mailpiece, regional_rate_box_b_mailpiece])
     end
   end
 

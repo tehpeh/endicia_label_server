@@ -29,11 +29,11 @@ module EndiciaLabelServer
       end
 
       def priority_mail_express_mailpiece_shapes
-        [flat_mailpiece, parcel_mailpiece, large_parcel_mailpiece, flat_rate_envelope_mailpiece]
+        [flat_mailpiece, parcel_mailpiece, large_parcel_mailpiece, flat_rate_envelope_mailpiece, regional_rate_box_a_mailpiece, regional_rate_box_b_mailpiece]
       end
 
       def priority_mail_express_international_mailpiece_shapes
-        [flat_mailpiece, flat_rate_padded_envelope_mailpiece, parcel_mailpiece, flat_rate_envelope_mailpiece]
+        [flat_mailpiece, flat_rate_padded_envelope_mailpiece, parcel_mailpiece, flat_rate_envelope_mailpiece, regional_rate_box_a_mailpiece, regional_rate_box_b_mailpiece]
       end
 
       def first_class_mail_mailpiece_shapes
@@ -61,7 +61,7 @@ module EndiciaLabelServer
       end
 
       def priority_mail_mailpiece_shapes
-        [flat_mailpiece, parcel_mailpiece, large_parcel_mailpiece, flat_rate_legal_envelope_mailpiece, flat_rate_padded_envelope_mailpiece, flat_rate_gift_card_envelope_mailpiece, small_flat_rate_envelope_mailpiece]
+        [flat_mailpiece, parcel_mailpiece, large_parcel_mailpiece, flat_rate_legal_envelope_mailpiece, flat_rate_padded_envelope_mailpiece, flat_rate_gift_card_envelope_mailpiece, small_flat_rate_envelope_mailpiece, regional_rate_box_a_mailpiece, regional_rate_box_b_mailpiece]
       end
 
       def critical_mail_mailpiece_shapes
@@ -77,7 +77,7 @@ module EndiciaLabelServer
       end
 
       def priority_mail_international_mailpiece_shapes
-        [flat_mailpiece, parcel_mailpiece, flat_rate_envelope_mailpiece, flat_rate_legal_envelope_mailpiece, flat_rate_padded_envelope_mailpiece, small_flat_rate_box_mailpiece, medium_flat_rate_box_mailpiece, large_flat_rate_box_mailpiece]
+        [flat_mailpiece, parcel_mailpiece, flat_rate_envelope_mailpiece, flat_rate_legal_envelope_mailpiece, flat_rate_padded_envelope_mailpiece, small_flat_rate_box_mailpiece, medium_flat_rate_box_mailpiece, large_flat_rate_box_mailpiece, regional_rate_box_a_mailpiece, regional_rate_box_b_mailpiece]
       end
 
       def priority_mail_express_flat_rate_envelope_mailpiece_shapes
